@@ -1,0 +1,28 @@
+name: Mi primer Workflow de Hola Mundo
+
+# Define qué evento activa el workflow
+on:
+  push:
+    branches: [ "aprendiendo-github-actions" ]
+  pull_request:
+    branches: [ "aprendiendo-github-actions" ]
+
+jobs:
+  ejecutar-script:
+    # El Runner: El servidor donde correrá el código
+    runs-on: ubuntu-latest
+
+    steps:
+      # Paso 1: Descargar el código del repositorio al runner
+      - name: Checkout del código
+        uses: actions/checkout@v4
+
+      # Paso 2: Configurar Python en el runner
+      - name: Configurar Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.10'
+
+      # Paso 3: Ejecutar el script que creamos antes
+      - name: Ejecutar script de Python
+        run: python hello-word.py
