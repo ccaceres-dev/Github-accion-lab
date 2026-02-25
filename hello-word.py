@@ -1,6 +1,6 @@
 import os
 
-# Leemos la variable de entorno que definiremos en el YAML
-nombre = os.getenv('VAR_NOMBRE', 'Usuario')
+# Obtiene la variable del entorno; si no existe, usa "Desconocido"
+nombre_usuario = os.getenv('VAR_NOMBRE', 'Desconocido')
 
-print(f"Hola {nombre}, saludos desde Github actions")
+print(f"Hola {nombre_usuario}, saludos desde Github actions 🚀")
