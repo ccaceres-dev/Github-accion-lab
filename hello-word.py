@@ -1,6 +1,10 @@
 import os
 
-# Obtiene la variable del entorno; si no existe, usa "Desconocido"
-nombre_usuario = os.getenv('VAR_NOMBRE', 'Desconocido')
 
-print(f"Hola {nombre_usuario}, saludos desde Github actions 🚀")
+def main():
+    nombre = os.getenv("USERNAME")
+    print(f"¡Hola, {nombre} desde GitHub!")
+
+
+if __name__ == "__main__":
+    main()
